@@ -10,7 +10,20 @@ This database contains five tables: region, state, city, and geometry. Each one 
 
 ### Table region
 
-| Field name            | Field Type      | Description| 
+| Field name            | Field Type      | Description                                  | 
 |-----------------------|-----------------|----------------------------------------------|
-| `id`                  | INT(10)         | Unique identifier same as used by IBGE.      |
-| `name`                | VARCHAR(16)     | Region's name                                |
+| `id`                  | INT(10)         | The unique identifier same as used by IBGE.  |
+| `name`                | VARCHAR(16)     | The region's name.                           |
+
+### Table state
+
+| Field name            | Field Type      | Description                                                                                                    | 
+|-----------------------|-----------------|----------------------------------------------------------------------------------------------------------------|
+| `id`                  | INT(10)         | The unique identifier same as used by IBGE.                                                                    |
+| `id_region`           | INT(10)         | The foreign key for the state's region.                                                                        |
+| `initials`            | VARCHAR(2)      | The state's name abreviattion.                                                                                 |
+| `name`                | VARCHAR(32)     | The state's name.                                                                                              |
+| `area`                | DOUBLE          | The state's area (Km²).                                                                                        |
+| `order_map`           | INT(1)          | The order (layer number) to print the state on the map. A high layer needs to be printed over a lower layer.   |
+| `latitude`            | DOUBLE          | The state's latitude.                                                                                          |
+| `longitude`           | DOUBLE          | The state's longitude.                                                                                         |
