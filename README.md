@@ -55,3 +55,33 @@ This database contains five tables: region, state, city, and geometry. Each one 
 | `type`                | VARCHAR(16)     | The geometry's type (Polygon or MultiPolygon).                                                                               |
 | `shape`               | LONGTEXT        | The entity's boundary expressed in a latitude-longitude collection.                                                          |
 | `shape_geometry`      | GEOMETRY        | The same information as `shape` in [Geometry](https://dev.mysql.com/doc/refman/5.7/en/spatial-type-overview.html) data type. |
+
+## Getting started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Make sure you have MySQL Community Server 5.7 installed in your development environment.
+
+### Clone the repository
+```
+git clone https://github.com/almfelipe/brazil-geographic-data.git
+```
+
+### Create database
+```sql
+create database your_dabase_name;
+```
+
+### Load data
+
+Execute scripts in the following order.  
+
+```
+./src/create_tables.sql
+./src/data/data_region.sql
+./src/data/data_state.sql
+./src/data/data_city.sql
+./src/data/data_geometry.sql
+```
