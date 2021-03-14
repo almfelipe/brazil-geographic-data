@@ -27,3 +27,18 @@ This database contains five tables: region, state, city, and geometry. Each one 
 | `order_map`           | INT(1)          | The order (layer number) to print the state on the map. A high layer needs to be printed over a lower layer.   |
 | `latitude`            | DOUBLE          | The state's latitude.                                                                                          |
 | `longitude`           | DOUBLE          | The state's longitude.                                                                                         |
+
+## Table city
+
+| Field name            | Field Type      | Description                                                                                                    | 
+|-----------------------|-----------------|----------------------------------------------------------------------------------------------------------------|
+| `id`                  | INT(10)         | The unique identifier same as used by IBGE.                                                                    |
+| `id_region`           | INT(10)         | The foreign key for the city's region.                                                                         |
+| `id_state`            | INT(10)         | The foreign key for the city's state.                                                                          |
+| `name`                | VARCHAR(64)     | The city's name.                                                                                               |
+| `capital`             | VARCHAR(1)      | `N` value: is not capital. `E` value: state's capital. `F` value: country's capital.                           |
+| `order_map`           | INT(1)          | The order (layer number) to print the city on the map. A high layer needs to be printed over a lower layer.    |
+| `latitude`            | DOUBLE          | The city's latitude.                                                                                           |
+| `longitude`           | DOUBLE          | The city's longitude.                                                                                          |
+| `altitude`            | INT(11)         | The city's altitude (m).                                                                                       |
+| `area`                | DOUBLE          | The state's area (Km²).                                                                                        |
