@@ -74,6 +74,13 @@ git clone https://github.com/almfelipe/brazil-geographic-data.git
 create database your_dabase_name;
 ```
 
+You can set up the database executing the full script:
+```
+./src/full_script.sql
+```
+
+**or** follow the steps below.
+
 ### Create tables
 
 Just execute the following script.
