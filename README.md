@@ -6,7 +6,7 @@ This is a database of Brazilian regions, states, and cities containing names and
 
 ## Database structure
 
-This database contains five tables: region, state, city, and geometry. Each one of those tables is described in the sections below.
+This database contains five tables: region, state, city, and boundary. Each one of those tables is described in the sections below.
 
 ### Table region
 
@@ -44,7 +44,7 @@ This database contains five tables: region, state, city, and geometry. Each one 
 | `area`                | DOUBLE          | The state's area (Km²).                                                                                                      |
 
 
-### Table geometry
+### Table boundary
 
 | Field name            | Field Type      | Description                                                                                                                  | 
 |-----------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -52,9 +52,9 @@ This database contains five tables: region, state, city, and geometry. Each one 
 | `id_region`           | INT(10)         | The foreign key for the geometry's region.                                                                                   |
 | `id_state`            | INT(10)         | The foreign key for the geometry's state.                                                                                    |
 | `id_city`             | INT(10)         | The foreign key for the geometry's state.                                                                                    |
-| `type`                | VARCHAR(16)     | The geometry's type (Polygon or MultiPolygon).                                                                               |
 | `shape`               | LONGTEXT        | The entity's boundary expressed in a latitude-longitude collection.                                                          |
-| `shape_geometry`      | GEOMETRY        | The same information as `shape` in [Geometry](https://dev.mysql.com/doc/refman/5.7/en/spatial-type-overview.html) data type. |
+| `geometry_type`       | VARCHAR(16)     | The geometry's type (Polygon or MultiPolygon).                                                                               |
+| `geometry_sahpe`      | GEOMETRY        | The same information as `shape` in [Geometry](https://dev.mysql.com/doc/refman/5.7/en/spatial-type-overview.html) data type. |
 
 ## Getting started
 
@@ -74,14 +74,21 @@ git clone https://github.com/almfelipe/brazil-geographic-data.git
 create database your_dabase_name;
 ```
 
+### Create tables
+
+Just execute the following script.
+
+```
+./src/create_tables.sql
+```
+
 ### Load data
 
 Execute scripts in the following order.  
 
 ```
-./src/create_tables.sql
 ./src/data/data_region.sql
 ./src/data/data_state.sql
 ./src/data/data_city.sql
-./src/data/data_geometry.sql
+./src/data/data_boundary.sql
 ```
