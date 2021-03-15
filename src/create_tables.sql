@@ -43,7 +43,7 @@ CREATE TABLE `boundary` (
   `id_city` int(10) unsigned DEFAULT NULL,
   `shape` longtext NOT NULL,
   `geometry_type` varchar(16) NOT NULL,
-  `geometry_shape` geometry DEFAULT NULL,
+  `geometry_shape` geometry NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_region_idx` (`id_region`),
   KEY `fk_id_state_idx` (`id_state`),
