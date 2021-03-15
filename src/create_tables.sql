@@ -36,14 +36,14 @@ CREATE TABLE `city` (
   CONSTRAINT `fk_city_state1` FOREIGN KEY (`id_state`) REFERENCES `state` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `geometry` (
+CREATE TABLE `boundary` (
   `id` int(10) unsigned NOT NULL,
   `id_region` int(10) unsigned DEFAULT NULL,
   `id_state` int(10) unsigned DEFAULT NULL,
   `id_city` int(10) unsigned DEFAULT NULL,
-  `type` varchar(16) NOT NULL,
   `shape` longtext NOT NULL,
-  `shape_geometry` geometry DEFAULT NULL,
+  `geometry_type` varchar(16) NOT NULL,
+  `geometry_shape` geometry DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_region_idx` (`id_region`),
   KEY `fk_id_state_idx` (`id_state`),
