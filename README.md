@@ -92,3 +92,6 @@ Execute scripts in the following order.
 ./src/data/data_city.sql
 ./src/data/data_boundary.sql
 ```
+
+## Acknowledgements
+* [IBGE](https://servicodados.ibge.gov.br/api/docs/malhas?versao=3)
